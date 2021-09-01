@@ -24,8 +24,9 @@ async def ping(ctx):
 
 @client.command(pass_context=True)        #Join Voice Channel
 async def join(ctx):
-    vcchannel=client.get_channel(VOICE_ID)
-    await vcchannel.connect()
+    #vcchannel=client.get_channel(VOICE_ID)
+    channel = ctx.author.voice.channel
+    await channel.connect()
     await ctx.send("Joined!")
 
 @client.command(pass_context=True)        #leave Voice Channel
