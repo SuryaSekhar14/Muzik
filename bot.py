@@ -8,8 +8,8 @@ from dotenv import load_dotenv
 
 load_dotenv('.env')
 
-CHANNEL_ID='882323144315138098'
-VOICE_ID='882325041189126155'
+CHANNEL_ID=os.getenv('CHANNEL_ID')
+VOICE_ID=os.getenv('VOICE_ID')
 client = commands.Bot(command_prefix = ',')
 
 @client.event
