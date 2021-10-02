@@ -3,8 +3,11 @@ import time
 from discord import channel
 from discord.member import VoiceState
 from discord.ext import commands
+import os
+from dotenv import load_dotenv
 
-TOKEN='ODgyMzIyMzk1MTQ5NTI1MDMz.YS5sww.3gMbMcuKomRiPGg9HS-PqMn_AaY'
+load_dotenv('.env')
+
 CHANNEL_ID='882323144315138098'
 VOICE_ID='882325041189126155'
 client = commands.Bot(command_prefix = ',')
@@ -37,4 +40,4 @@ async def leave(ctx):
     except:
         await ctx.send("I am not in the Meeting.")
 
-client.run(TOKEN) 
+client.run(os.getnev('TOKEN'))
